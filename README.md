@@ -84,3 +84,34 @@ This system is inspired by platforms like **Cult Fit**, combining **physical gym
 
 ## 📂 Project Structure
 
+
+AllInOneFitnessApp/
+│
+├── Controllers/
+│ ├── AdminController.cs
+│ ├── UserController.cs
+│ ├── TrainerController.cs
+│ └── ExpertController.cs
+│
+├── Models/
+│ ├── Membership.cs
+│ ├── Event.cs
+│ ├── Attendance.cs
+│ ├── Payment.cs
+│ └── Video.cs
+│
+├── Views/
+│ ├── Admin/
+│ ├── User/
+│ ├── Trainer/
+│ └── Expert/
+│
+├── Data/
+│ └── ApplicationDbContext.cs
+│
+├── wwwroot/
+│ ├── css/
+│ ├── js/
+│ └── images/
+│
+└── README.md
