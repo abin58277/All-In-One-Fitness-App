@@ -1,0 +1,153 @@
+﻿@* @{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
+
+
+@{
+    ViewData["Title"] = "All In One Fitness App";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* HERO SECTION */
+    .hero {
+        min-height: 90vh;
+        background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+        display: flex;
+        align-items: center;
+        color: white;
+        position: relative;
+        
+    }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -80px;
+            animation: float 10s infinite ease-in-out reverse;
+        }
+ 
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        animation: fadeSlide 1.2s ease-out;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        animation: fadeSlide 1.5s ease-out;
+    }
+
+ 
+
+  
+    /* FEATURES */
+    .feature-card {
+        transition: all 0.3s ease;
+        border-radius: 20px;
+    }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+        }
+</style>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            
+                <h1>All In One Fitness App</h1>
+                <p class="mt-3">
+                    A complete fitness & health management platform to manage
+                    memberships, trainers, experts, workouts, events, and progress —
+                    all in one place.
+                </p>
+            <a asp-controller="Account"
+               asp-action="Login"
+               class="btn btn-outline-light btn-lg mt-3">
+                Login Now
+            </a>
+          
+            
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FEATURES SECTION -->
+<section class="container my-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Why Choose Us?</h2>
+        <p class="text-muted">
+            Designed for fitness clubs, trainers, experts, and members
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card feature-card p-4 text-center h-100">
+                <i class="fa-solid fa-dumbbell fa-3x text-primary mb-3"></i>
+                <h5 class="fw-bold">Smart Gym Management</h5>
+                <p class="text-muted">
+                    Manage members, trainers, schedules, and events efficiently.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card feature-card p-4 text-center h-100">
+                <i class="fa-solid fa-user-doctor fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">Expert Guidance</h5>
+                <p class="text-muted">
+                    Get health tips, diet plans, and professional expert support.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card feature-card p-4 text-center h-100">
+                <i class="fa-solid fa-chart-line fa-3x text-warning mb-3"></i>
+                <h5 class="fw-bold">Track Your Progress</h5>
+                <p class="text-muted">
+                    Attendance, BMI, water intake, workouts, and goals — all tracked.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="text-center py-5 bg-dark text-white">
+    <h3 class="fw-bold">Ready to transform your fitness journey?</h3>
+    <p class="opacity-75">
+        Join today and experience a smarter way to stay fit.
+    </p>
+
+</section>

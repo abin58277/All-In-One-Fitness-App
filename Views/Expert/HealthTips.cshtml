@@ -1,0 +1,88 @@
+﻿@* 
+@{
+    ViewData["Title"] = "HealthTips";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>HealthTips</h1>
+ *@
+
+
+
+@{
+    ViewData["Title"] = "Health Tips";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- PAGE HEADER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-heart-pulse me-2"></i> Health Tips
+    </h2>
+    <p class="text-light opacity-75">
+        Create and manage health & wellness tips for users.
+    </p>
+</div>
+
+<!-- ADD TIP BUTTON -->
+<div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-primary">
+        <i class="fa-solid fa-plus me-1"></i> Add New Tip
+    </button>
+</div>
+
+<!-- HEALTH TIPS TABLE -->
+<div class="card p-4">
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tip Title</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- STATIC DEMO HEALTH TIPS -->
+                <tr>
+                    <td>1</td>
+                    <td>Stay Hydrated</td>
+                    <td>
+                        Drink at least 8 glasses of water daily to stay hydrated.
+                    </td>
+                    <td>Nutrition</td>
+                    <td>
+                        <span class="badge bg-success">Published</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Warm-up Before Workout</td>
+                    <td>
+                        Always warm up to avoid injuries during exercise.
+                    </td>
+                    <td>Fitness</td>
+                    <td>
+                        <span class="badge bg-success">Published</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Proper Sleep</td>
+                    <td>
+                        Get 7–8 hours of sleep for better recovery and mental health.
+                    </td>
+                    <td>Wellness</td>
+                    <td>
+                        <span class="badge bg-warning text-dark">Draft</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

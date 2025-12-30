@@ -1,0 +1,58 @@
+﻿@* namespace All_In_One_Fitness_App.Views.Users
+{
+    public class BMICalculator
+    {
+    }
+} *@
+
+
+@{
+    ViewData["Title"] = "BMI Calculator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-weight-scale me-2"></i> BMI Calculator
+    </h2>
+    <p class="text-light opacity-75">
+        Enter your height and weight to calculate your Body Mass Index.
+    </p>
+</div>
+
+<div class="card p-4 col-md-6">
+
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Height (cm)</label>
+            <input type="number" name="height" class="form-control" placeholder="e.g. 170" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Weight (kg)</label>
+            <input type="number" name="weight" class="form-control" placeholder="e.g. 65" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Calculate BMI
+        </button>
+    </form>
+
+    @* ERROR MESSAGE *@
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger mt-4">
+            @ViewBag.Error
+        </div>
+    }
+
+    @* RESULT *@
+    @if (ViewBag.BMI != null)
+    {
+        <div class="alert alert-@ViewBag.Color mt-4">
+            <h5>Your BMI: <strong>@ViewBag.BMI</strong></h5>
+            <p>Status: <strong>@ViewBag.Status</strong></p>
+            <p>@ViewBag.Message</p>
+        </div>
+    }
+</div>

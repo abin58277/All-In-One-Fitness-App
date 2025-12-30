@@ -1,0 +1,123 @@
+﻿@model IEnumerable<All_In_One_Fitness_App.Models.Event>
+
+    @{
+    ViewData["Title"] = "Event";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <!-- PAGE HEADER -->
+ <div class="mb-4">
+        <h2 class="fw-bold text-white">
+            <i class="fa-solid fa-calendar-days me-2"></i> Events
+        </h2>
+        <p class="text-light opacity-75">
+            View and manage fitness club events and programs.
+        </p>
+ </div>
+
+    <!-- EVENTS CARD -->
+<div class="card p-4">
+
+        <!-- TOP INFO -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="badge bg-info fs-6 px-3 py-2">
+                Total Events: @(Model != null && Model.Any() ? Model.Count() : 3)
+            </span>
+
+            <button class="btn btn-primary">
+                <i class="fa-solid fa-plus me-1"></i> Add Event
+            </button>
+        </div>
+
+        <!-- EVENTS TABLE -->
+        <div class="table-responsive">
+            <table class="table table-dark table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Event Title</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model != null && Model.Any())
+                {
+                    int i = 1;
+                    foreach (var ev in Model)
+                    {
+                    <tr>
+                        <td>@i</td>
+                        <td>
+                            <strong>@ev.Title</strong>
+                            <div class="text-muted small">
+                                @(string.IsNullOrEmpty(ev.Description)
+                                        ? "No description provided"
+                                        : ev.Description)
+                            </div>
+                        </td>
+                        <td>@ev.EventDate.ToString("dd MMM yyyy")</td>
+                        <td>@(string.IsNullOrEmpty(ev.Location) ? "Main Gym Hall" : ev.Location)</td>
+                        <td>
+                            @if (ev.IsActive)
+                                {
+                            <span class="badge bg-success">Upcoming</span>
+                                }
+                                else
+                                {
+                            <span class="badge bg-danger">Closed</span>
+                                }
+                        </td>
+                    </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    @* STATIC DEMO EVENTS *@
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <strong>Yoga Wellness Camp</strong>
+                            <div class="text-muted small">
+                                Improve flexibility and mental wellness
+                            </div>
+                        </td>
+                        <td>20 Sep 2025</td>
+                        <td>Studio Hall</td>
+                        <td><span class="badge bg-success">Upcoming</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <strong>Zumba Dance Session</strong>
+                            <div class="text-muted small">
+                                High-energy cardio workout
+                            </div>
+                        </td>
+                        <td>25 Sep 2025</td>
+                        <td>Main Gym Floor</td>
+                        <td><span class="badge bg-success">Upcoming</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <strong>Fitness Bootcamp</strong>
+                            <div class="text-muted small">
+                                Strength & endurance training
+                            </div>
+                        </td>
+                        <td>30 Sep 2025</td>
+                        <td>Outdoor Area</td>
+                        <td><span class="badge bg-warning text-dark">Closed</span></td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+ </div>
+ 

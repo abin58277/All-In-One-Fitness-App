@@ -1,0 +1,117 @@
+﻿@model IEnumerable<All_In_One_Fitness_App.Models.Users>
+
+@{
+    ViewData["Title"] = "Users Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- PAGE HEADER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-users me-2"></i> Users Management
+    </h2>
+    <p class="text-light opacity-75">
+        View, freeze, or resume memberships of registered users.
+    </p>
+</div>
+
+<!-- USERS CARD -->
+<div class="card p-4">
+
+    <!-- TOP INFO -->
+    <div class="mb-3">
+        <span class="badge bg-info fs-6 px-3 py-2">
+            Total Users: @(Model == null ? 0 : Model.Count())
+        </span>
+    </div>
+
+    <!-- USERS TABLE -->
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Membership</th>
+                    <th>Status</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    int i = 1;
+                    foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+
+                            <td>
+                                <strong>@user.FullName</strong>
+                            </td>
+
+                            <td class="opacity-75">
+                                @user.Email
+                            </td>
+
+                            <td>
+                                <span class="badge bg-primary">
+                                    @user.Membership
+                                </span>
+                            </td>
+
+                            <td>
+                                @if (user.IsMembershipFrozen)
+                                {
+                                    <span class="badge bg-warning text-dark">
+                                        Frozen
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">
+                                        Active
+                                    </span>
+                                }
+                            </td>
+
+                            <td class="text-center">
+                                @if (user.IsMembershipFrozen)
+                                {
+                                    <a asp-controller="Admin"
+                                       asp-action="ResumeUser"
+                                       asp-route-id="@user.Id"
+                                       class="btn btn-sm btn-success">
+                                        <i class="fa-solid fa-play me-1"></i> Resume
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="Admin"
+                                       asp-action="FreezeUser"
+                                       asp-route-id="@user.Id"
+                                       class="btn btn-sm btn-warning text-dark">
+                                        <i class="fa-solid fa-pause me-1"></i> Freeze
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+
+                        i++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center text-warning">
+                            No users found.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

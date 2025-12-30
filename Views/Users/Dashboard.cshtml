@@ -1,0 +1,393 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Dashboard</h1>
+ *@
+
+
+
+@* @{
+    ViewData["Title"] = "User Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .fade-slide {
+        animation: fadeSlide 1s ease-in-out;
+    }
+
+   
+
+    .stat-card {
+        border-radius: 18px;
+        transition: all 0.35s ease;
+        cursor: pointer;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+        }
+
+    .action-card {
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+        .action-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+        }
+
+    .progress {
+        height: 10px;
+        border-radius: 20px;
+    }
+</style>
+
+<!-- PAGE HEADER -->
+<div class="mb-4 fade-slide">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-user me-2"></i> User Dashboard
+    </h2>
+    <p class="text-light opacity-75">
+        Track your fitness journey, workouts, goals, and health progress.
+    </p>
+</div>
+
+<!-- STATS SECTION -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-3">
+        <div class="card stat-card p-4 text-center">
+            <i class="fa-solid fa-id-card fa-2x text-primary mb-2"></i>
+            <h6>Membership</h6>
+            <h4 class="fw-bold">Gold Plan</h4>
+            <small class="text-primary">Active</small>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card stat-card p-4 text-center">
+            <i class="fa-solid fa-calendar-check fa-2x text-success mb-2"></i>
+            <h6>Attendance</h6>
+            <h3 class="fw-bold">22</h3>
+            <small class="text-success">Sessions Attended</small>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card stat-card p-4 text-center">
+            <i class="fa-solid fa-weight-scale fa-2x text-warning mb-2"></i>
+            <h6>BMI</h6>
+            <h3 class="fw-bold">23.4</h3>
+            <small class="text-warning">Normal</small>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card stat-card p-4 text-center">
+            <i class="fa-solid fa-fire fa-2x text-danger mb-2"></i>
+            <h6>Calories Burned</h6>
+            <h3 class="fw-bold">12,450</h3>
+            <small class="text-danger">This Month</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- GOALS & PROGRESS -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-6">
+        <div class="card p-4 action-card">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-bullseye me-2"></i> Fitness Goal
+            </h5>
+
+            <p class="mb-1"><strong>Goal:</strong> Weight Loss (5 kg)</p>
+            <p class="mb-3"><strong>Target Date:</strong> 30 Sep 2025</p>
+
+            <div class="progress mb-2">
+                <div class="progress-bar bg-success" style="width: 65%"></div>
+            </div>
+            <small class="text-success">65% completed</small>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-4 action-card">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-droplet me-2"></i> Water Intake
+            </h5>
+
+            <p class="mb-1"><strong>Today:</strong> 2.1 / 3 Liters</p>
+
+            <div class="progress mb-2">
+                <div class="progress-bar bg-info" style="width: 70%"></div>
+            </div>
+            <small class="text-info">Keep going!</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- QUICK ACTIONS -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-4">
+        <div class="card action-card p-4 text-center">
+            <i class="fa-solid fa-video fa-2x text-primary mb-3"></i>
+            <h6>Training Videos</h6>
+            <p class="text-muted">Watch workouts & exercises</p>
+            <a asp-controller="User" asp-action="Videos"
+               class="btn btn-primary w-100">
+                View Videos
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card action-card p-4 text-center">
+            <i class="fa-solid fa-utensils fa-2x text-success mb-3"></i>
+            <h6>Diet Plans</h6>
+            <p class="text-muted">Personalized diet recommendations</p>
+            <a asp-controller="User" asp-action="DietPlans"
+               class="btn btn-success w-100">
+                View Diet Plan
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card action-card p-4 text-center">
+            <i class="fa-solid fa-calendar-days fa-2x text-warning mb-3"></i>
+            <h6>Events</h6>
+            <p class="text-muted">Upcoming fitness events</p>
+            <a asp-controller="User" asp-action="Events"
+               class="btn btn-warning w-100">
+                View Events
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- MOTIVATION -->
+<div class="card p-4 fade-slide">
+    <h5 class="fw-semibold mb-3">
+        <i class="fa-solid fa-quote-left me-2"></i> Daily Motivation
+    </h5>
+
+    <blockquote class="blockquote mb-0">
+        <p>
+            “Fitness is not about being better than someone else.
+            It’s about being better than you used to be.”
+        </p>
+        <footer class="blockquote-footer text-white-50">
+            Stay Consistent 💪
+        </footer>
+    </blockquote>
+</div> *@
+
+
+@{
+    ViewData["Title"] = "User Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .fade-slide {
+        animation: fadeSlide 1s ease-in-out;
+    }
+
+    .stat-card {
+        border-radius: 18px;
+        transition: all 0.35s ease;
+        cursor: pointer;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+        }
+
+    .action-card {
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+        .action-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+        }
+
+    .progress {
+        height: 10px;
+        border-radius: 20px;
+    }
+</style>
+
+<!-- PAGE HEADER -->
+<div class="mb-4 fade-slide">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-user me-2"></i> User Dashboard
+    </h2>
+    <p class="text-light opacity-75">
+        Track your fitness journey, workouts, goals, and health progress.
+    </p>
+</div>
+
+<!-- STATS SECTION -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-3">
+        <div class="card stat-card p-4 text-center">
+            <i class="fa-solid fa-id-card fa-2x text-primary mb-2"></i>
+            <h6>Membership</h6>
+            <h4 class="fw-bold">Gold Plan</h4>
+            <small class="text-primary">Active</small>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card stat-card p-4 text-center">
+            <i class="fa-solid fa-calendar-check fa-2x text-success mb-2"></i>
+            <h6>Attendance</h6>
+            <h3 class="fw-bold">22</h3>
+            <small class="text-success">Sessions Attended</small>
+        </div>
+    </div>
+
+    <!-- ✅ BMI CARD (CLICKABLE NOW) -->
+    <div class="col-md-3">
+        <a asp-controller="Users"
+           asp-action="BMICalculator"
+           class="text-decoration-none text-dark">
+
+            <div class="card stat-card p-4 text-center">
+                <i class="fa-solid fa-weight-scale fa-2x text-warning mb-2"></i>
+                <h6>BMI</h6>
+                <h3 class="fw-bold">23.4</h3>
+                <small class="text-warning">Click to Calculate</small>
+            </div>
+
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card stat-card p-4 text-center">
+            <i class="fa-solid fa-fire fa-2x text-danger mb-2"></i>
+            <h6>Calories Burned</h6>
+            <h3 class="fw-bold">12,450</h3>
+            <small class="text-danger">This Month</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- GOALS & PROGRESS -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-6">
+        <div class="card p-4 action-card">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-bullseye me-2"></i> Fitness Goal
+            </h5>
+
+            <p class="mb-1"><strong>Goal:</strong> Weight Loss (5 kg)</p>
+            <p class="mb-3"><strong>Target Date:</strong> 30 Sep 2025</p>
+
+            <div class="progress mb-2">
+                <div class="progress-bar bg-success" style="width: 65%"></div>
+            </div>
+            <small class="text-success">65% completed</small>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <a asp-controller="Users"
+           asp-action="WaterIntake"
+           class="text-decoration-none text-dark">
+
+            <div class="card p-4 action-card">
+                <h5 class="fw-semibold mb-3">
+                    <i class="fa-solid fa-droplet me-2"></i> Water Intake
+                </h5>
+
+                <p class="mb-1"><strong>Today:</strong> 2.1 / 3 Liters</p>
+
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-info" style="width: 70%"></div>
+                </div>
+
+                <small class="text-info">
+                    Click to track water intake 💧
+                </small>
+            </div>
+
+        </a>
+    </div>
+
+
+</div>
+
+<!-- QUICK ACTIONS -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-4">
+        <div class="card action-card p-4 text-center">
+            <i class="fa-solid fa-video fa-2x text-primary mb-3"></i>
+            <h6>Training Videos</h6>
+            <p class="text-muted">Watch workouts & exercises</p>
+            <a asp-controller="Trainer" asp-action="Videos"
+               class="btn btn-primary w-100">
+                View Videos
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card action-card p-4 text-center">
+            <i class="fa-solid fa-utensils fa-2x text-success mb-3"></i>
+            <h6>Diet Plans</h6>
+            <p class="text-muted">Personalized diet recommendations</p>
+            <button class="btn btn-success w-100" disabled>
+                Coming Soon
+            </button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card action-card p-4 text-center">
+            <i class="fa-solid fa-calendar-days fa-2x text-warning mb-3"></i>
+            <h6>Events</h6>
+            <p class="text-muted">Upcoming fitness events</p>
+            <a asp-controller="Users" asp-action="Events"
+               class="btn btn-warning w-100">
+                View Events
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- MOTIVATION -->
+<div class="card p-4 fade-slide">
+    <h5 class="fw-semibold mb-3">
+        <i class="fa-solid fa-quote-left me-2"></i> Daily Motivation
+    </h5>
+
+    <blockquote class="blockquote mb-0">
+        <p>
+            “Fitness is not about being better than someone else.
+            It’s about being better than you used to be.”
+        </p>
+        <footer class="blockquote-footer text-white-50">
+            Stay Consistent 💪
+        </footer>
+    </blockquote>
+</div>

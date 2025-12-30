@@ -1,0 +1,107 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Interactions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Interactions</h1>
+ *@
+
+
+
+
+@{
+    ViewData["Title"] = "User Interactions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- PAGE HEADER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-comments me-2"></i> User Interactions
+    </h2>
+    <p class="text-light opacity-75">
+        View and respond to user health-related queries.
+    </p>
+</div>
+
+<!-- INTERACTIONS CARD -->
+<div class="card p-4">
+
+    <!-- INFO BAR -->
+    <div class="mb-3">
+        <span class="badge bg-info fs-6 px-3 py-2">
+            Active Queries: 3
+        </span>
+    </div>
+
+    <!-- INTERACTIONS TABLE -->
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User Name</th>
+                    <th>Query</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- STATIC DEMO INTERACTIONS -->
+                <tr>
+                    <td>1</td>
+                    <td>Rahul Kumar</td>
+                    <td>
+                        Need a diet plan for weight loss.
+                    </td>
+                    <td>10 Sep 2025</td>
+                    <td>
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary">
+                            Reply
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Neha Sharma</td>
+                    <td>
+                        Experiencing knee pain after workout.
+                    </td>
+                    <td>11 Sep 2025</td>
+                    <td>
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary">
+                            Reply
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Amit Verma</td>
+                    <td>
+                        BMI calculation seems incorrect.
+                    </td>
+                    <td>12 Sep 2025</td>
+                    <td>
+                        <span class="badge bg-success">Replied</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-secondary" disabled>
+                            Replied
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<All_In_One_Fitness_App.Models.Trainer>
+
+@{
+    ViewData["Title"] = "Trainers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- PAGE HEADER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-person-running me-2"></i> Trainers
+    </h2>
+    <p class="text-light opacity-75">
+        View and manage fitness trainers.
+    </p>
+</div>
+
+<!-- TRAINERS CARD -->
+<div class="card p-4">
+
+    <!-- TOP BAR -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="badge bg-info fs-6 px-3 py-2">
+            Total Trainers: @(Model?.Count() ?? 0)
+        </span>
+
+        <button class="btn btn-primary" disabled>
+            <i class="fa-solid fa-plus me-1"></i> Add Trainer
+        </button>
+    </div>
+
+    <!-- TRAINERS TABLE -->
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Trainer Name</th>
+                    <th>Email</th>
+                    <th>Specialization</th>
+                    <th>Status</th>
+                    <th style="width:140px;">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    int i = 1;
+                    foreach (var trainer in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td><strong>@trainer.FullName</strong></td>
+                            <td>@trainer.Email</td>
+                            <td>@trainer.Specialization</td>
+                            <td>
+                                @if (trainer.IsActive)
+                                {
+                                    <span class="badge bg-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Inactive</span>
+                                }
+                            </td>
+                            <td>
+                                @if (trainer.IsActive)
+                                {
+                                    <form asp-action="DeactivateTrainer" method="post" class="d-inline">
+                                        <input type="hidden" name="id" value="@trainer.Id" />
+                                        <button class="btn btn-sm btn-warning">Deactivate</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form asp-action="ActivateTrainer" method="post" class="d-inline">
+                                        <input type="hidden" name="id" value="@trainer.Id" />
+                                        <button class="btn btn-sm btn-success">Activate</button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center text-warning">
+                            No trainers found.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Profile</h1>
+ *@
+
+
+
+@{
+    ViewData["Title"] = "My Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .fade-slide {
+        animation: fadeSlide 0.9s ease-in-out;
+    }
+ 
+
+    .profile-card {
+        border-radius: 20px;
+        transition: all 0.35s ease;
+    }
+
+        .profile-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+        }
+
+    .avatar {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #0d6efd, #6f42c1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+        margin: auto;
+    }
+</style>
+
+<!-- PAGE HEADER -->
+<div class="mb-4 fade-slide">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-user-gear me-2"></i> My Profile
+    </h2>
+    <p class="text-light opacity-75">
+        View and update your personal information.
+    </p>
+</div>
+
+<div class="row g-4 fade-slide">
+
+    <!-- PROFILE SUMMARY -->
+    <div class="col-md-4">
+        <div class="card profile-card p-4 text-center">
+            <div class="avatar mb-3">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <h5 class="fw-bold mb-1">Rahul Kumar</h5>
+            <p class="text-muted mb-2">rahul.kumar@email.com</p>
+
+            <span class="badge bg-success px-3 py-2">
+                Active Member
+            </span>
+
+            <hr class="my-4" />
+
+            <p class="mb-1"><strong>Membership:</strong> Gold Plan</p>
+            <p class="mb-0"><strong>Joined:</strong> Jan 2025</p>
+        </div>
+    </div>
+
+    <!-- PROFILE DETAILS -->
+    <div class="col-md-8">
+        <div class="card profile-card p-4">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-id-card me-2"></i> Personal Details
+            </h5>
+
+            <form>
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Full Name</label>
+                        <input type="text"
+                               class="form-control"
+                               value="Rahul Kumar" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email"
+                               class="form-control"
+                               value="rahul.kumar@email.com" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Age</label>
+                        <input type="number"
+                               class="form-control"
+                               value="26" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Height (cm)</label>
+                        <input type="number"
+                               class="form-control"
+                               value="172" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Weight (kg)</label>
+                        <input type="number"
+                               class="form-control"
+                               value="72" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Phone Number</label>
+                        <input type="text"
+                               class="form-control"
+                               value="9876543210" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Fitness Goal</label>
+                        <select class="form-select">
+                            <option selected>Weight Loss</option>
+                            <option>Muscle Gain</option>
+                            <option>Endurance</option>
+                            <option>General Fitness</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12 text-end mt-3">
+                        <button type="button"
+                                class="btn btn-primary px-4">
+                            <i class="fa-solid fa-floppy-disk me-1"></i>
+                            Save Changes
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

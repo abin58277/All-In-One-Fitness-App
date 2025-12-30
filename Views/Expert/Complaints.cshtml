@@ -1,0 +1,105 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Complaints";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Complaints</h1>
+ *@
+
+
+@{
+    ViewData["Title"] = "Complaints";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- PAGE HEADER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-triangle-exclamation me-2"></i> User Complaints
+    </h2>
+    <p class="text-light opacity-75">
+        View and respond to health-related complaints raised by users.
+    </p>
+</div>
+
+<!-- COMPLAINTS CARD -->
+<div class="card p-4">
+
+    <!-- INFO BAR -->
+    <div class="mb-3">
+        <span class="badge bg-warning text-dark fs-6 px-3 py-2">
+            Pending Complaints: 2
+        </span>
+    </div>
+
+    <!-- COMPLAINTS TABLE -->
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User Name</th>
+                    <th>Complaint</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- STATIC DEMO COMPLAINTS -->
+                <tr>
+                    <td>1</td>
+                    <td>Rahul Kumar</td>
+                    <td>
+                        Feeling discomfort after following the new diet plan.
+                    </td>
+                    <td>09 Sep 2025</td>
+                    <td>
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary">
+                            Reply
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Neha Sharma</td>
+                    <td>
+                        Knee pain during cardio workouts.
+                    </td>
+                    <td>10 Sep 2025</td>
+                    <td>
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary">
+                            Reply
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Amit Verma</td>
+                    <td>
+                        BMI calculation shows incorrect value.
+                    </td>
+                    <td>08 Sep 2025</td>
+                    <td>
+                        <span class="badge bg-success">Resolved</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-secondary" disabled>
+                            Replied
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,148 @@
+﻿
+@* @{
+    ViewData["Title"] = "Schedules";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Schedules</h1>
+ *@
+
+
+@{
+    ViewData["Title"] = "My Schedules";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .fade-slide {
+        animation: fadeSlide 0.9s ease-in-out;
+    }
+
+ 
+
+    .schedule-card {
+        border-radius: 18px;
+        transition: all 0.35s ease;
+    }
+
+        .schedule-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+        }
+
+    .time-badge {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+        border-radius: 20px;
+    }
+</style>
+
+<!-- PAGE HEADER -->
+<div class="mb-4 fade-slide">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-calendar-days me-2"></i> My Schedules
+    </h2>
+    <p class="text-light opacity-75">
+        View your daily and upcoming training schedules.
+    </p>
+</div>
+
+<!-- TODAY'S SCHEDULE -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-6">
+        <div class="card schedule-card p-4">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-sun me-2 text-warning"></i> Morning Batch
+            </h5>
+
+            <p class="mb-2">
+                <strong>Program:</strong> Strength Training
+            </p>
+            <p class="mb-2">
+                <strong>Time:</strong>
+                <span class="badge bg-success time-badge">6:00 AM – 7:30 AM</span>
+            </p>
+            <p class="mb-2">
+                <strong>Location:</strong> Main Gym Hall
+            </p>
+            <p class="mb-0">
+                <strong>Members:</strong> 18
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card schedule-card p-4">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-heart-pulse me-2 text-danger"></i> Cardio Session
+            </h5>
+
+            <p class="mb-2">
+                <strong>Program:</strong> Weight Loss Cardio
+            </p>
+            <p class="mb-2">
+                <strong>Time:</strong>
+                <span class="badge bg-success time-badge">9:00 AM – 10:00 AM</span>
+            </p>
+            <p class="mb-2">
+                <strong>Location:</strong> Cardio Zone
+            </p>
+            <p class="mb-0">
+                <strong>Members:</strong> 15
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- UPCOMING SCHEDULES -->
+<div class="card p-4 fade-slide">
+    <h5 class="fw-semibold mb-3">
+        <i class="fa-solid fa-clock me-2"></i> Upcoming Sessions
+    </h5>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Program</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Members</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Yoga & Flexibility</td>
+                    <td>Tomorrow</td>
+                    <td>6:30 AM – 7:30 AM</td>
+                    <td>Studio Hall</td>
+                    <td>20</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>HIIT Training</td>
+                    <td>Tomorrow</td>
+                    <td>5:30 PM – 6:30 PM</td>
+                    <td>Main Gym Hall</td>
+                    <td>22</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Evening Yoga</td>
+                    <td>Friday</td>
+                    <td>6:30 PM – 7:30 PM</td>
+                    <td>Yoga Room</td>
+                    <td>16</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

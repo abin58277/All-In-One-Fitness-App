@@ -1,0 +1,156 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reports</h1>
+ *@
+
+
+
+@{
+    ViewData["Title"] = "Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- PAGE HEADER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-chart-line me-2"></i> Reports
+    </h2>
+    <p class="text-light opacity-75">
+        View monthly revenue, memberships, and payment statistics.
+    </p>
+</div>
+
+<!-- SUMMARY CARDS -->
+<div class="row g-4 mb-5">
+
+    <div class="col-md-3">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-indian-rupee-sign fa-2x text-success mb-2"></i>
+            <h6>Total Revenue</h6>
+            <h3 class="fw-bold">₹ 1,25,000</h3>
+            <small class="text-success">This Month</small>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-users fa-2x text-info mb-2"></i>
+            <h6>Total Members</h6>
+            <h3 class="fw-bold">248</h3>
+            <small class="text-info">Active Users</small>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-id-card fa-2x text-warning mb-2"></i>
+            <h6>Membership Plans</h6>
+            <h3 class="fw-bold">4</h3>
+            <small class="text-warning">Available</small>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-calendar-check fa-2x text-primary mb-2"></i>
+            <h6>Events Conducted</h6>
+            <h3 class="fw-bold">12</h3>
+            <small class="text-primary">This Year</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- MONTHLY PAYMENT REPORT -->
+<div class="card p-4 mb-4">
+    <h5 class="fw-semibold mb-3">
+        <i class="fa-solid fa-receipt me-2"></i> Monthly Payment Report
+    </h5>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Month</th>
+                    <th>Total Payments</th>
+                    <th>Revenue</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>January</td>
+                    <td>120</td>
+                    <td>₹ 95,000</td>
+                    <td><span class="badge bg-success">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>February</td>
+                    <td>135</td>
+                    <td>₹ 1,05,000</td>
+                    <td><span class="badge bg-success">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>March</td>
+                    <td>148</td>
+                    <td>₹ 1,25,000</td>
+                    <td><span class="badge bg-warning text-dark">Ongoing</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- MEMBERSHIP WISE REPORT -->
+<div class="card p-4">
+    <h5 class="fw-semibold mb-3">
+        <i class="fa-solid fa-layer-group me-2"></i> Membership-wise Report
+    </h5>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Membership Plan</th>
+                    <th>Total Users</th>
+                    <th>Revenue</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Basic Plan</td>
+                    <td>85</td>
+                    <td>₹ 35,000</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Gold Plan</td>
+                    <td>95</td>
+                    <td>₹ 55,000</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Premium Plan</td>
+                    <td>68</td>
+                    <td>₹ 35,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

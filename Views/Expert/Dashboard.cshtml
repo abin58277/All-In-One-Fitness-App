@@ -1,0 +1,117 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Dashboard</h1>
+ *@
+
+
+
+
+@{
+    ViewData["Title"] = "Expert Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- PAGE HEADER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-user-doctor me-2"></i> Expert Dashboard
+    </h2>
+    <p class="text-light opacity-75">
+        Manage your interactions, health tips, and user complaints.
+    </p>
+</div>
+
+<!-- SUMMARY CARDS -->
+<div class="row g-4 mb-5">
+
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-users fa-2x text-info mb-2"></i>
+            <h6>Assigned Users</h6>
+            <h3 class="fw-bold">42</h3>
+            <small class="text-info">Active Members</small>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-heart-pulse fa-2x text-success mb-2"></i>
+            <h6>Health Tips Posted</h6>
+            <h3 class="fw-bold">18</h3>
+            <small class="text-success">Total Tips</small>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-triangle-exclamation fa-2x text-warning mb-2"></i>
+            <h6>Pending Complaints</h6>
+            <h3 class="fw-bold">5</h3>
+            <small class="text-warning">Need Response</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- QUICK ACTIONS -->
+<div class="row g-4 mb-5">
+
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-comments me-2"></i> User Interactions
+            </h5>
+            <p class="opacity-75">
+                View and respond to user queries and health-related questions.
+            </p>
+            <a asp-controller="Expert" asp-action="Interactions"
+               class="btn btn-primary w-100">
+                View Interactions
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-heart-pulse me-2"></i> Health Tips
+            </h5>
+            <p class="opacity-75">
+                Add new health tips and manage existing ones.
+            </p>
+            <a asp-controller="Expert" asp-action="HealthTips"
+               class="btn btn-primary w-100">
+                Manage Health Tips
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- COMPLAINTS PREVIEW -->
+<div class="card p-4">
+    <h5 class="fw-semibold mb-3">
+        <i class="fa-solid fa-bug me-2"></i> Recent Complaints
+    </h5>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-transparent text-white border-0">
+            Diet plan clarification required
+        </li>
+        <li class="list-group-item bg-transparent text-white border-0">
+            Workout causing knee pain
+        </li>
+        <li class="list-group-item bg-transparent text-white border-0">
+            BMI calculation issue
+        </li>
+    </ul>
+
+    <a asp-controller="Expert" asp-action="Complaints"
+       class="btn btn-outline-info mt-3">
+        View All Complaints
+    </a>
+</div>

@@ -1,0 +1,192 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Videos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Videos</h1>
+ *@
+
+
+@{
+    ViewData["Title"] = "Training Videos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .fade-slide {
+        animation: fadeSlide 0.9s ease-in-out;
+    }
+ 
+
+    .video-card {
+        border-radius: 18px;
+        transition: all 0.35s ease;
+        overflow: hidden;
+    }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+        }
+
+    .video-thumb {
+        height: 180px;
+        background: linear-gradient(135deg, #1f4037, #99f2c8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+    }
+
+    .upload-card {
+        border-radius: 20px;
+        border: 2px dashed #0d6efd;
+        transition: all 0.3s ease;
+    }
+
+        .upload-card:hover {
+            background-color: rgba(13, 110, 253, 0.05);
+        }
+</style>
+
+<!-- PAGE HEADER -->
+<div class="mb-4 fade-slide">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-video me-2"></i> Training Videos
+    </h2>
+    <p class="text-light opacity-75">
+        Upload, manage, and organize workout training videos for members.
+    </p>
+</div>
+
+<!-- SUMMARY -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-video fa-2x text-primary mb-2"></i>
+            <h6>Total Videos</h6>
+            <h3 class="fw-bold">12</h3>
+            <small class="text-primary">Uploaded</small>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-dumbbell fa-2x text-success mb-2"></i>
+            <h6>Workout Categories</h6>
+            <h3 class="fw-bold">6</h3>
+            <small class="text-success">Strength, Cardio, Yoga</small>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <i class="fa-solid fa-eye fa-2x text-warning mb-2"></i>
+            <h6>Total Views</h6>
+            <h3 class="fw-bold">1,240</h3>
+            <small class="text-warning">By Members</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- UPLOAD VIDEO -->
+<div class="card upload-card p-4 mb-5 fade-slide">
+    <h5 class="fw-semibold mb-3">
+        <i class="fa-solid fa-upload me-2"></i> Upload New Training Video
+    </h5>
+
+    <form>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Video Title</label>
+                <input type="text" class="form-control" placeholder="Enter video title" />
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Category</label>
+                <select class="form-select">
+                    <option>Strength Training</option>
+                    <option>Cardio</option>
+                    <option>Yoga</option>
+                    <option>HIIT</option>
+                    <option>Flexibility</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Upload Video</label>
+                <input type="file" class="form-control" />
+            </div>
+
+            <div class="col-md-12 text-end mt-3">
+                <button type="button" class="btn btn-primary">
+                    <i class="fa-solid fa-cloud-arrow-up me-1"></i> Upload Video
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- VIDEO LIST -->
+<div class="row g-4 fade-slide">
+
+    <!-- VIDEO CARD -->
+    <div class="col-md-4">
+        <div class="card video-card">
+            <div class="video-thumb">
+                <i class="fa-solid fa-play"></i>
+            </div>
+            <div class="p-3">
+                <h6 class="fw-bold mb-1">Full Body Strength</h6>
+                <small class="text-muted">Strength Training</small>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="badge bg-success">Published</span>
+                    <button class="btn btn-sm btn-outline-danger">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card video-card">
+            <div class="video-thumb">
+                <i class="fa-solid fa-play"></i>
+            </div>
+            <div class="p-3">
+                <h6 class="fw-bold mb-1">Morning Cardio Blast</h6>
+                <small class="text-muted">Cardio</small>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="badge bg-success">Published</span>
+                    <button class="btn btn-sm btn-outline-danger">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card video-card">
+            <div class="video-thumb">
+                <i class="fa-solid fa-play"></i>
+            </div>
+            <div class="p-3">
+                <h6 class="fw-bold mb-1">Relaxing Yoga Flow</h6>
+                <small class="text-muted">Yoga</small>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="badge bg-warning text-dark">Draft</span>
+                    <button class="btn btn-sm btn-outline-danger">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

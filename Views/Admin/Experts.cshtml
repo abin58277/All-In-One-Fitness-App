@@ -1,0 +1,106 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Experts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Experts</h1>
+ *@
+
+
+@model IEnumerable<All_In_One_Fitness_App.Models.Expert>
+
+@{
+    ViewData["Title"] = "Experts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- PAGE HEADER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-user-doctor me-2"></i> Experts
+    </h2>
+    <p class="text-light opacity-75">
+        View and manage health & fitness experts.
+    </p>
+</div>
+
+<!-- EXPERTS CARD -->
+<div class="card p-4">
+
+    <!-- TOP INFO -->
+    <div class="mb-3">
+        <span class="badge bg-info fs-6 px-3 py-2">
+            Total Experts: @(Model != null && Model.Any() ? Model.Count() : 3)
+        </span>
+    </div>
+
+    <!-- EXPERTS TABLE -->
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Expert Name</th>
+                    <th>Expertise</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    int i = 1;
+                    foreach (var expert in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td>@expert.Name</td>
+                            <td>@(expert.Expertise ?? "General Health")</td>
+                            <td>@(expert.ContactInfo ?? "Not Available")</td>
+                            <td>
+                                @if (expert.IsActive)
+                                {
+                                    <span class="badge bg-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Inactive</span>
+                                }
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    <!-- STATIC DEMO EXPERTS -->
+                    <tr>
+                        <td>1</td>
+                        <td>Dr. Anjali Mehta</td>
+                        <td>Nutrition & Diet</td>
+                        <td>anjali@health.com</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Dr. Rakesh Singh</td>
+                        <td>Physiotherapy</td>
+                        <td>rakesh@health.com</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Dr. Pooja Sharma</td>
+                        <td>Yoga & Mental Wellness</td>
+                        <td>pooja@health.com</td>
+                        <td><span class="badge bg-warning text-dark">Inactive</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

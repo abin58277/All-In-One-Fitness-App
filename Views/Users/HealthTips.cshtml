@@ -1,0 +1,187 @@
+﻿@* 
+@{
+    ViewData["Title"] = "HealthTips";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>HealthTips</h1>
+ *@
+
+@{
+    ViewData["Title"] = "Health Tips";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .fade-slide {
+        animation: fadeSlide 1s ease-in-out;
+    }
+
+  
+
+    .tip-card {
+        border-radius: 22px;
+        transition: all 0.35s ease;
+    }
+
+        .tip-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+        }
+
+    .tip-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: white;
+    }
+</style>
+
+<!-- PAGE HEADER -->
+<div class="mb-4 fade-slide">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-heart-pulse me-2"></i> Health Tips
+    </h2>
+    <p class="text-light opacity-75">
+        Simple daily tips to keep your body healthy and your mind strong.
+    </p>
+</div>
+
+<!-- HEALTH TIPS GRID -->
+<div class="row g-4 fade-slide">
+
+    <!-- TIP 1 -->
+    <div class="col-md-4">
+        <div class="card tip-card p-4 h-100">
+            <div class="d-flex align-items-center mb-3">
+                <div class="tip-icon bg-success me-3">
+                    <i class="fa-solid fa-apple-whole"></i>
+                </div>
+                <h5 class="fw-bold mb-0">Healthy Diet</h5>
+            </div>
+
+            <p class="text-muted">
+                Include more fruits, vegetables, and whole grains in your daily meals.
+                Avoid processed food as much as possible.
+            </p>
+
+            <span class="badge bg-success">Diet</span>
+        </div>
+    </div>
+
+    <!-- TIP 2 -->
+    <div class="col-md-4">
+        <div class="card tip-card p-4 h-100">
+            <div class="d-flex align-items-center mb-3">
+                <div class="tip-icon bg-primary me-3">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <h5 class="fw-bold mb-0">Regular Exercise</h5>
+            </div>
+
+            <p class="text-muted">
+                Aim for at least 30 minutes of physical activity every day to keep
+                your heart healthy and muscles strong.
+            </p>
+
+            <span class="badge bg-primary">Workout</span>
+        </div>
+    </div>
+
+    <!-- TIP 3 -->
+    <div class="col-md-4">
+        <div class="card tip-card p-4 h-100">
+            <div class="d-flex align-items-center mb-3">
+                <div class="tip-icon bg-info me-3">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+                <h5 class="fw-bold mb-0">Stay Hydrated</h5>
+            </div>
+
+            <p class="text-muted">
+                Drink at least 2–3 liters of water daily to keep your body hydrated
+                and improve digestion.
+            </p>
+
+            <span class="badge bg-info">Hydration</span>
+        </div>
+    </div>
+
+    <!-- TIP 4 -->
+    <div class="col-md-4">
+        <div class="card tip-card p-4 h-100">
+            <div class="d-flex align-items-center mb-3">
+                <div class="tip-icon bg-warning me-3">
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+                <h5 class="fw-bold mb-0">Proper Sleep</h5>
+            </div>
+
+            <p class="text-muted">
+                Get 7–8 hours of quality sleep every night to allow your body
+                to recover and stay energized.
+            </p>
+
+            <span class="badge bg-warning text-dark">Lifestyle</span>
+        </div>
+    </div>
+
+    <!-- TIP 5 -->
+    <div class="col-md-4">
+        <div class="card tip-card p-4 h-100">
+            <div class="d-flex align-items-center mb-3">
+                <div class="tip-icon bg-danger me-3">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h5 class="fw-bold mb-0">Mental Health</h5>
+            </div>
+
+            <p class="text-muted">
+                Practice meditation or deep breathing to reduce stress and
+                maintain mental well-being.
+            </p>
+
+            <span class="badge bg-danger">Mind</span>
+        </div>
+    </div>
+
+    <!-- TIP 6 -->
+    <div class="col-md-4">
+        <div class="card tip-card p-4 h-100">
+            <div class="d-flex align-items-center mb-3">
+                <div class="tip-icon bg-secondary me-3">
+                    <i class="fa-solid fa-person-walking"></i>
+                </div>
+                <h5 class="fw-bold mb-0">Stay Active</h5>
+            </div>
+
+            <p class="text-muted">
+                Avoid sitting for long periods. Take short walks or stretch
+                regularly throughout the day.
+            </p>
+
+            <span class="badge bg-secondary">Daily Habit</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- MOTIVATION -->
+<div class="card p-4 mt-5 fade-slide">
+    <h5 class="fw-semibold mb-2">
+        <i class="fa-solid fa-quote-left me-2"></i> Tip of the Day
+    </h5>
+
+    <blockquote class="blockquote mb-0">
+        <p>
+            “Take care of your body. It’s the only place you have to live.”
+        </p>
+        <footer class="blockquote-footer text-white-50">
+            Stay Healthy 💪
+        </footer>
+    </blockquote>
+</div>

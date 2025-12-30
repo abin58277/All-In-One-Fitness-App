@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewData["Title"] = "Attendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .fade-slide {
+        animation: fadeSlide 0.9s ease-in-out;
+    }
+
+
+    .attendance-card {
+        border-radius: 18px;
+        transition: all 0.35s ease;
+    }
+
+        .attendance-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+        }
+
+    .qr-box {
+        border: 2px dashed #0d6efd;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+    }
+</style>
+
+<!-- PAGE HEADER -->
+<div class="mb-4 fade-slide">
+    <h2 class="fw-bold text-white">
+        <i class="fa-solid fa-qrcode me-2"></i> Attendance
+    </h2>
+    <p class="text-light opacity-75">
+        View and track trainee attendance using QR-based check-in.
+    </p>
+</div>
+
+<!-- SUMMARY SECTION -->
+<div class="row g-4 mb-5 fade-slide">
+
+    <div class="col-md-4">
+        <div class="card attendance-card p-4 text-center">
+            <i class="fa-solid fa-users fa-2x text-primary mb-2"></i>
+            <h6>Total Trainees</h6>
+            <h3 class="fw-bold">48</h3>
+            <small class="text-primary">Assigned</small>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card attendance-card p-4 text-center">
+            <i class="fa-solid fa-user-check fa-2x text-success mb-2"></i>
+            <h6>Present Today</h6>
+            <h3 class="fw-bold">41</h3>
+            <small class="text-success">Checked In</small>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card attendance-card p-4 text-center">
+            <i class="fa-solid fa-user-xmark fa-2x text-danger mb-2"></i>
+            <h6>Absent Today</h6>
+            <h3 class="fw-bold">7</h3>
+            <small class="text-danger">Not Attended</small>
+        </div>
+    </div>
+
+</div>
+
+<!-- QR CODE SECTION -->
+<div class="row g-4 mb-5 fade-slide">
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-qrcode me-2"></i> QR Code Check-In
+            </h5>
+
+            <div class="qr-box">
+                <i class="fa-solid fa-qrcode fa-4x text-primary mb-3"></i>
+                <p class="opacity-75 mb-0">
+                    Members scan QR code to mark attendance
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h5 class="fw-semibold mb-3">
+                <i class="fa-solid fa-circle-info me-2"></i> Instructions
+            </h5>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent text-white border-0">
+                    QR code is refreshed daily
+                </li>
+                <li class="list-group-item bg-transparent text-white border-0">
+                    Each member can scan only once per session
+                </li>
+                <li class="list-group-item bg-transparent text-white border-0">
+                    Attendance is auto-recorded
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ATTENDANCE TABLE -->
+<div class="card p-4 fade-slide">
+    <h5 class="fw-semibold mb-3">
+        <i class="fa-solid fa-list me-2"></i> Today’s Attendance
+    </h5>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Member Name</th>
+                    <th>Batch</th>
+                    <th>Check-in Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- STATIC DEMO DATA -->
+                <tr>
+                    <td>1</td>
+                    <td>Rahul Kumar</td>
+                    <td>Morning Strength</td>
+                    <td>6:05 AM</td>
+                    <td><span class="badge bg-success">Present</span></td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Neha Sharma</td>
+                    <td>Cardio</td>
+                    <td>9:02 AM</td>
+                    <td><span class="badge bg-success">Present</span></td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Amit Verma</td>
+                    <td>Morning Strength</td>
+                    <td>—</td>
+                    <td><span class="badge bg-danger">Absent</span></td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Pooja Singh</td>
+                    <td>Yoga</td>
+                    <td>6:35 AM</td>
+                    <td><span class="badge bg-success">Present</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
