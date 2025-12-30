@@ -1,0 +1,99 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+
+}
+
+.nav-link {
+    color: #ddd !important;
+    transition: 0.3s;
+}
+
+    .nav-link:hover {
+        color: #00ffcc !important;
+        transform: translateY(-2px);
+    }
+
+/* Sidebar */
+.sidebar {
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding-top: 30px;
+    position: fixed;
+    width: 240px;
+}
+
+    .sidebar a {
+        display: block;
+        padding: 12px 20px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .sidebar a:hover {
+            background: rgba(0, 255, 204, 0.2);
+            border-left: 4px solid #00ffcc;
+            padding-left: 16px;
+        }
+
+/* Main Content */
+.content {
+    margin-left: 260px;
+    padding: 30px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+
+/* Cards */
+.card {
+    border-radius: 18px;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    color: #fff;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaa;
+    text-align: center;
+    padding: 12px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #00ffcc, #00b4d8);
+    border: none;
+    color: #000;
+    font-weight: 600;
+}
+
+    .btn-primary:hover {
+        opacity: 0.85;
+    }
